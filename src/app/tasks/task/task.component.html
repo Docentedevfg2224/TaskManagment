@@ -1,1 +1,18 @@
-<h5 [ngStyle]="backgroundColor: getColor()"></h5>
+<div class="container">
+    <div class="row">
+        <h5>Task</h5>
+        <div class="vertical">
+            <div class="d-flex justify-content-between">
+                <div class="col-sm-12 col-md-8 col-lg-8">
+                    <input class="form-control" id="nameTask" type="text" placeholder="Inserisci il nome dell'attività" (input)="onUpdateNameTask($event)">
+                    <input class="form-control" id="amount" type="number" min="0" placeholder="Inserisci la quantità" (input)="onUpdateDescriptionTask($event)">
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <button class="btn btn-outline-primary" (click)="insertTask()">Inserisci task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<!-- <h5 [ngStyle]="{backgroundColor: getColor()}"></h5> -->

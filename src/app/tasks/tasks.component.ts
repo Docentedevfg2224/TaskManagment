@@ -10,6 +10,7 @@ export class TasksComponent {
 
   tasks: TaskComponent[] = [];
 
+
   addNewTask(newTask: TaskComponent){
     this.tasks.push(newTask);
   }

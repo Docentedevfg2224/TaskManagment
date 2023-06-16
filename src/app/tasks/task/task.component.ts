@@ -1,20 +1,21 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-tasks',
+  selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent {
 
-  @Input() nameTask: string = '';
-  @Input() descriptionTask: string = '';
+  nameTask: string = '';
+  descriptionTask: string = '';
   isCompleted: boolean = false;
   @Output() newTaskEvent = new EventEmitter<TaskComponent>();
 
   constructor(){
-
   }
+
+
 
   setCompleted(){
     this.isCompleted = true;

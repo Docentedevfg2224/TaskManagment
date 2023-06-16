@@ -8,19 +8,31 @@ import { Component, EventEmitter, Output} from '@angular/core';
 export class TaskEditComponent {
   titleTask : string ='';
   descriptionTask: string='';
-  @Output() newTaskEvent = new EventEmitter<[string, string]>();
+  
+  
+  @Output() newTaskEvent = new EventEmitter<{"title": string, "description": string}>();
+
 
   insertTask(){
-    let taskTuple : [string, string] = ['',''];
-    taskTuple.push(this.titleTask, this.descriptionTask);
+    // let taskTuple : [string, string] = ['',''];
+    // taskTuple.push(this.titleTask, this.descriptionTask);
+    const taskObject : {"title": string, "description": string} = {
+      title: this.titleTask,
+      description: this.descriptionTask
+    };
+
+    this.addNewTask(taskObject);
   }
+  
   onUpdateTitleTask(event: Event){
     this.titleTask = (<HTMLInputElement>event.target).value;
   }
+
   onUpdateDescriptionTask(event: Event){
     this.descriptionTask = (<HTMLInputElement>event.target).value;
   }
-  addNewTask(taskTuple: [string, string]){
-    this.newTaskEvent.emit(taskTuple);
+  
+  addNewTask(taskObject: {"title": string, "description": string}){
+    this.newTaskEvent.emit(taskObject);
   }
 }

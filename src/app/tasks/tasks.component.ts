@@ -22,7 +22,7 @@ export class TasksComponent {
   }
 
   deleteTask(task : Tasks){
-    task.getDeleteTask
+    task.getDeleteTask();
   }
 
   completeTask(task : Tasks){

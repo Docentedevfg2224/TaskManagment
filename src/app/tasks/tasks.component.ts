@@ -21,8 +21,13 @@ export class TasksComponent {
     this.tasks.push(new Tasks(titleTask, desriptionTask));
   }
 
-  deleteTask(task : Tasks){
-    task.getDeleteTask();
+  deleteTask(task: Tasks){
+    const index = this.tasks.indexOf(task);
+    console.log(index); // 👉️ 1
+
+    if (index !== -1) {
+    this.tasks.splice(index, 1);
+    }
   }
 
   completeTask(task : Tasks){

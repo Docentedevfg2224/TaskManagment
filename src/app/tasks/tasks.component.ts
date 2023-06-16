@@ -12,13 +12,13 @@ export class TasksComponent {
 
 
   addNewTask(newTask: {"name": string, "description": string}){
-    
+    console.log(newTask);
     let task: {"name": string, "description": string, "isCompleted": boolean} = {
       name: newTask.name,
       description: newTask.description,
       isCompleted: false
     }
-
+    console.log(task);
     this.tasks.push(task);
   }
 }

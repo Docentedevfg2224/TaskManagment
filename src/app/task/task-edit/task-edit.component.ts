@@ -10,22 +10,24 @@ import { Task } from "../task.model";
 export class TaskEditComponent
 {
 
-    @Input() array;
+    @Input() array : Task[] = [];
     titolo : string = '';
     descrizione : string = '';
 
 
     addelement()
     {  
-        this.array(new Task(this.titolo,this.descrizione));
+        this.array.push(new Task(this.titolo,this.descrizione));
     }
 
     edittitolo(event:Event)
     {
+        
         this.titolo = (<HTMLInputElement>event.target).value;
     }
     editdesc(event:Event)
     {
+        
         this.descrizione = (<HTMLInputElement>event.target).value; 
     }
 

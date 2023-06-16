@@ -8,10 +8,6 @@ import { Task } from './task.model';
 export class TaskComponent 
 {
   @Output() tasks: Task[] = [];
-  @Output() newTaskEvent = new EventEmitter<{tasks: Task[]}>();
-
-
-
 
 }
 

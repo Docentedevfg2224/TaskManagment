@@ -1,10 +1,19 @@
-<div class="container">
+<h3>List Tusks</h3>
+<div class="component">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <app-task-list></app-task-list>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6">
-            <app-task-edit></app-task-edit>
-        </div>
+        <ul class="list-group">
+            <li *ngFor="let task of tasks" class="list-group-item-action list-group-item d-flex justify-content-between align-items-center " aria-current="true">
+                <div class="pull-left">
+                    {{task.title}}
+                    <p>{{task.description}}</p>
+                </div>
+                <span class="pull-right">
+                    <button class="btn btn-success" (click)="completeTask(task)"><i class="bi bi-check-circle"></i>
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteTask(task)"><i class="bi bi-trash-fill"></i>
+                    </button>
+                </span>
+            </li>
+        </ul>
     </div>
 </div>

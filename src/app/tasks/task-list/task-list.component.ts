@@ -7,17 +7,6 @@ import { Tasks } from '../tasks.model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  tasks : Tasks[] = [
-    new Tasks('pietro','compierchio'),
-    new Tasks('giancarlo','rotunno'),
 
-  ]
 
-  deleteTask(task : Tasks){
-    task.getDeleteTask
-  }
-
-  completeTask(task : Tasks){
-    task.getCompleteTask();
-  }
 }

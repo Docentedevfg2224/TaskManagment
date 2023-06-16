@@ -14,24 +14,25 @@ export class TaskEditComponent
     titolo : string = '';
     descrizione : string = '';
 
+    
 
     addelement()
     {  
         this.array.push(new Task(this.titolo,this.descrizione));
         let inputTitle = $('#inputTitle');
         let inputDescription = $('#inputDescription');
-        // while(input.next()){
-        //     input.val('');
-        // }
+        
+        
         inputTitle.val('');
         inputDescription.val('');
     }
 
     edittitolo(event:Event)
-    {
-        
+    {  
         this.titolo = (<HTMLInputElement>event.target).value;
+        console.log(event);
     }
+
     editdesc(event:Event)
     {
         this.descrizione = (<HTMLInputElement>event.target).value; 

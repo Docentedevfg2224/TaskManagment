@@ -1,1 +1,14 @@
-<p>task-edit works!</p>
+<h3>Aggiungi Task</h3>
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-between">
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                <input class="form-control" id="title" type="text" placeholder="Titolo" (input)="onUpdateTitleTask($event)">
+                <input class="form-control" id="desciption" type="text" placeholder="Descizione" (input)="onUpdateDescriptionTask($event)">
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <button class="btn btn-outline-primary" (click)="insertTask" >Add Task</button>
+            </div>
+        </div>
+    </div>
+</div>

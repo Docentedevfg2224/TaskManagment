@@ -9,4 +9,10 @@ export class Tasks{
         this.title = title;
         this.description = description;
     }
+    getDeleteTask(){
+        this.delete = true;
+    }
+    getCompleteTask(){
+        this.complete = true;
+    }
 }

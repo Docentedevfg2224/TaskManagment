@@ -13,4 +13,11 @@ export class TaskListComponent {
 
   ]
 
+  deleteTask(task : Tasks){
+    task.getDeleteTask
+  }
+
+  completeTask(task : Tasks){
+    task.getCompleteTask();
+  }
 }

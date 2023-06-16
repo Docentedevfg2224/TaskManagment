@@ -14,10 +14,10 @@ export class TasksComponent {
 
   ]
 
-  addNewTask(newTitleTask : string, newDescriptionTask: string){
-
-    let titleTask = newTitleTask;
-    let desriptionTask = newDescriptionTask;
+  addNewTask(event: {"title": string, "description": string}){
+    console.log(event);
+    let titleTask = event.title;
+    let desriptionTask = event.description;
     this.tasks.push(new Tasks(titleTask, desriptionTask));
   }
 

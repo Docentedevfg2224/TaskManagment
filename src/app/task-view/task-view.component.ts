@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class TaskViewComponent {
 
+  task: {"nome": string, "descrizione": string} = {nome: '', descrizione: ''};
+ 
+  aggiungiNome(event: Event){
+    console.log(event);
+    // let nome = (<HTMLBaseElementevent>.target).value;
+  }
 }

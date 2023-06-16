@@ -8,10 +8,17 @@ import { TaskComponent } from './task/task.component';
 })
 export class TasksComponent {
 
-  tasks: TaskComponent[] = [];
+  tasks: {"name": string, "description": string, "isCompleted": boolean}[] = [];
 
 
-  addNewTask(newTask: TaskComponent){
-    this.tasks.push(newTask);
+  addNewTask(newTask: {"name": string, "description": string}){
+    
+    let task: {"name": string, "description": string, "isCompleted": boolean} = {
+      name: newTask.name,
+      description: newTask.description,
+      isCompleted: false
+    }
+
+    this.tasks.push(task);
   }
 }

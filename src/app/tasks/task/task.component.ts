@@ -9,21 +9,22 @@ export class TaskComponent {
 
   nameTask: string = '';
   descriptionTask: string = '';
-  isCompleted: boolean = false;
-  @Output() newTaskEvent = new EventEmitter<TaskComponent>();
+  // isCompleted: boolean = false;
+
+  @Output() newTaskEvent = new EventEmitter<{"name": string, "description": string}>();
 
   constructor(){
   }
 
 
 
-  setCompleted(){
-    this.isCompleted = true;
-  }
+  // setCompleted(){
+  //   this.isCompleted = true;
+  // }
 
-  getColor(){
-    return this.isCompleted === false ? 'red' : 'green';
-  }
+  // getColor(){
+  //   return this.isCompleted === false ? 'red' : 'green';
+  // }
 
   onUpdateNameTask(event : Event){
     this.nameTask = (<HTMLInputElement>event.target).value;
@@ -34,11 +35,16 @@ export class TaskComponent {
   }
 
   insertTask(){
-    let newTask = new TaskComponent;
+    
+    let newTask : {"name": string, "description": string} = {
+      name: this.nameTask,
+      description: this.descriptionTask
+    };
+
     this.addNewTask(newTask);
   }
 
-  addNewTask(newTask: TaskComponent){
+  addNewTask(newTask: {"name": string, "description": string}){
     this.newTaskEvent.emit(newTask);
   }
 }

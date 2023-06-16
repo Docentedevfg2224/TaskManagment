@@ -1,6 +1,6 @@
 import { Component, Input, Output } from "@angular/core";
 import { Task } from "../task.model";
-
+import * as $ from 'jquery';
 @Component({
     selector: 'app-task-edit',
     templateUrl: './task-edit.component.html',
@@ -18,6 +18,13 @@ export class TaskEditComponent
     addelement()
     {  
         this.array.push(new Task(this.titolo,this.descrizione));
+        let inputTitle = $('#inputTitle');
+        let inputDescription = $('#inputDescription');
+        // while(input.next()){
+        //     input.val('');
+        // }
+        inputTitle.val('');
+        inputDescription.val('');
     }
 
     edittitolo(event:Event)
@@ -27,7 +34,6 @@ export class TaskEditComponent
     }
     editdesc(event:Event)
     {
-        
         this.descrizione = (<HTMLInputElement>event.target).value; 
     }
 

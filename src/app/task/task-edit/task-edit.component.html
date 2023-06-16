@@ -1,11 +1,11 @@
 <div class="card">
     <div class="card-body">
         <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Titolo" (input)="edittitolo($event)">
+        <input type="text" id="inputTitle" class="form-control" placeholder="Titolo" (input)="edittitolo($event)">
         </div>
 
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Descrizione" (input)="editdesc($event)">
+            <input type="text" id="inputDescription" class="form-control" placeholder="Descrizione" (input)="editdesc($event)">
         </div>
 
         <button type="button" class="btn btn-outline-success" (click)="addelement()">Success</button>

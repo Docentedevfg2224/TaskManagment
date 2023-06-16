@@ -7,8 +7,8 @@ import { Tasks } from '../tasks.model';
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
-  task : Tasks[] = [
-    new Tasks('pietro','compiechio'),
+  tasks : Tasks[] = [
+    new Tasks('pietro','compierchio'),
     new Tasks('giancarlo','rotunno'),
 
   ]

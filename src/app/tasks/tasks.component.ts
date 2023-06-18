@@ -13,12 +13,20 @@ export class TasksComponent {
     new Tasks('giancarlo','rotunno'),
 
   ]
+  tasksD : Tasks[] = [
+    new Tasks('element','delete'),
+    new Tasks('elementi','eliminati'),
+
+  ]
 
   addNewTask(event: {"title": string, "description": string}){
     console.log(event);
     let titleTask = event.title;
     let desriptionTask = event.description;
     this.tasks.push(new Tasks(titleTask, desriptionTask));
+  }
+  addNewTaskDelete(tasksD : Tasks){
+    this.tasksD.push(tasksD);
   }
 
   deleteTask(task: Tasks){

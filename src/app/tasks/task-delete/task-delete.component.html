@@ -1,0 +1,13 @@
+<div class="row2">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+        <h4>List delete</h4>
+            <ul class="list-group">
+                <li *ngFor="let task of tasksD" class="list-group-item-action list-group-item d-flex justify-content-between align-items-center " aria-current="true">
+                    <div class="pull-left">
+                        {{task.title}}
+                        <p>{{task.description}}</p>
+                    </div>
+                </li>
+            </ul>
+    </div>
+</div>

@@ -18,6 +18,11 @@ export class TasksComponent {
     new Tasks('elementi','eliminati'),
 
   ]
+  tasksC : Tasks[] = [
+    new Tasks('element','complete'),
+    new Tasks('elementi','completati'),
+
+  ]
 
   addNewTask(event: {"title": string, "description": string}){
     console.log(event);
@@ -27,6 +32,9 @@ export class TasksComponent {
   }
   addNewTaskDelete(tasksD : Tasks){
     this.tasksD.push(tasksD);
+  }
+  addNewTaskComplete(tasksC : Tasks){
+    this.tasksC.push(tasksC);
   }
 
   deleteTask(task: Tasks){

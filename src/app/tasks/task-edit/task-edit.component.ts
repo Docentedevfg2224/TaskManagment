@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output} from '@angular/core';
-
+import { Task } from '../model/task.model';
 @Component({
   selector: 'app-task-edit',
   templateUrl: './task-edit.component.html',
@@ -10,13 +10,13 @@ export class TaskEditComponent {
   descriptionTask: string='';
   
   
-  @Output() newTaskEvent = new EventEmitter<{"title": string, "description": string}>();
+  @Output() newTaskEvent = new EventEmitter<Task>();
 
 
   insertTask(){
     // let taskTuple : [string, string] = ['',''];
     // taskTuple.push(this.titleTask, this.descriptionTask);
-    const taskObject : {"title": string, "description": string} = {
+    const taskObject : Task = {
       title: this.titleTask,
       description: this.descriptionTask
     };
@@ -32,7 +32,7 @@ export class TaskEditComponent {
     this.descriptionTask = (<HTMLInputElement>event.target).value;
   }
   
-  addNewTask(taskObject: {"title": string, "description": string}){
+  addNewTask(taskObject: Task){
     this.newTaskEvent.emit(taskObject);
   }
 }

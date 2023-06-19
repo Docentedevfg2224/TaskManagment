@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tasks } from './tasks.model';
-
+import { Task, TASK } from './model/task.model';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css']
 })
-export class TasksComponent {
+export class TasksComponent implements OnInit{
   
+  listTask: Task[] = [];
+
+  constructor(){}
+
+  ngOnInit(): void {
+    this.listTask = TASK;
+  }
+
+
   tasks : Tasks[] = [
     new Tasks('pietro','compierchio'),
     new Tasks('giancarlo','rotunno'),
@@ -24,7 +33,7 @@ export class TasksComponent {
 
   ]
 
-  addNewTask(event: {"title": string, "description": string}){
+  addNewTask(event: Task){
     console.log(event);
     let titleTask = event.title;
     let desriptionTask = event.description;
